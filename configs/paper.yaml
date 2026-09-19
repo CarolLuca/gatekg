@@ -1,0 +1,11 @@
+api:
+  provider: google
+  embedding_provider: google
+  google:
+    provider: gemini_api
+    llm_model_name: gemini-3-flash-preview
+    kg_llm_model_name: gemini-3-flash-preview
+    judge_model_name: gemini-3.1-pro-preview
+    reranker_model_name: gemini-3-flash-preview
+    emb_model_name: gemini-embedding-001
+    embedding_dim: 1024

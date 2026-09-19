@@ -1,0 +1,12 @@
+defaults:
+  dataset: ../examples/qa.jsonl
+  format: qa_jsonl
+  judge: exact
+  segment_context: true
+  chunk_words: 1000
+  overlap_ratio: 0.25
+
+runs:
+  - runner: read_only_rlm
+  - runner: read_write_rlm
+  - runner: aggressive_write_rlm

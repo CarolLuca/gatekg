@@ -1,0 +1,17 @@
+api:
+  provider: vllm
+  embedding_provider: ollama
+  vllm:
+    base_url: http://127.0.0.1:8000
+    llm_model_name: Qwen/Qwen3.5-9B
+    max_model_len: 32768
+    gpu_memory_utilization: 0.9
+    tensor_parallel_size: 1
+    quantization: null
+    language_model_only: true
+    enable_thinking: false
+  ollama:
+    llm_model_name: qwen3.5:9b
+    emb_model_name: nomic-embed-text:latest
+    embedding_dim: 768
+    context_length: 32768

@@ -1,0 +1,52 @@
+api:
+  provider: ollama
+  embedding_provider: ollama
+  temperature: 0.0
+  input_token_caps:
+    google: 1048576
+    ollama: 32768
+    vllm: 32768
+
+  google:
+    provider: gemini_api
+    llm_model_name: gemini-3.8-flash
+    reranker_model_name: gemini-3.8-flash
+    judge_model_name: gemini-3.8-flash
+    emb_model_name: gemini-embedding-001
+    embedding_dim: 1024
+
+  ollama:
+    base_url: http://127.0.0.1:11434
+    llm_model_name: qwen3.5:9b
+    context_length: 32768
+    emb_model_name: nomic-embed-text:latest
+    embedding_dim: 768
+
+  vllm:
+    base_url: http://127.0.0.1:8000
+    llm_model_name: Qwen/Qwen3.5-9B
+    max_model_len: 32768
+    gpu_memory_utilization: 0.9
+    tensor_parallel_size: 1
+    cuda_visible_devices: "0"
+    quantization: null
+    language_model_only: true
+    enable_thinking: false
+
+logging:
+  root_level: INFO
+  graphiti_level: INFO
+  neo4j_level: WARNING
+  rlm_level: INFO
+  http_level: WARNING
+  openai_level: WARNING
+  google_level: WARNING
+
+llm_runtime:
+  max_attempts: 5
+  timeout_seconds: 750
+  retry_delay_seconds: 2
+
+graphiti:
+  max_coroutines: 1
+  llm_timeout_seconds: 600
